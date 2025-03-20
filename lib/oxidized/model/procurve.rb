@@ -80,7 +80,7 @@ class Procurve < Oxidized::Model
     comment cfg
   end
 
-  cmd 'show running-config'
+  cmd 'show running-config structured'
 
   cfg :telnet do
     username /Username:/
