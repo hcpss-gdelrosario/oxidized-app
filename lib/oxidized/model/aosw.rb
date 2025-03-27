@@ -47,6 +47,7 @@ class AOSW < Oxidized::Model
   end
 
   cmd 'show version' do |cfg|
+    cfg.gsub!(/Activation Key: (\S+)$/, 'Activation Key: <activation key removed>')
     cfg = cfg.each_line.reject { |line| line.match(/(Switch|AP) uptime/i) || line.match(/Reboot Time and Cause/i) }
     rstrip_cfg comment cfg.join
   end
